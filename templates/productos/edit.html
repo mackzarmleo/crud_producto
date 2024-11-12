@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+              Editar Producto
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('productos_update') }}" method="POST">
+                    <input type="hidden" name="id" value="{{ producto['id'] }}">
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <input type="text" class="form-control" name="descripcion" value="{{ producto['descripcion'] }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" name="cantidad" value="{{ producto['cantidad'] }}">
+                    </div>   
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="text" class="form-control" name="precio" value="{{ producto['precio'] }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>                                    
+                </form>
+            </div>
+          </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+{% include 'footer.html' %}
